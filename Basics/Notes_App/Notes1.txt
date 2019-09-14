@@ -1,0 +1,1 @@
+ Appending the data through appendFileSync !!!/n Appending the data through appendFileSync !!! Appending the data through appendFileSync !!!
