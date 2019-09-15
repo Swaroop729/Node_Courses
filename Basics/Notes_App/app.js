@@ -23,3 +23,7 @@ But firslty in order to use them we need to intiliaze our node application with 
 have a package.json and can store the npm modules within that packages.json and also there would
 be package-lock json with the vendor who published that packaged with encrypt code and with url and 
 version so in future it install same version from same url.*/
+
+
+/* Input parameters for Node application. */
+console.log(process.argv)
