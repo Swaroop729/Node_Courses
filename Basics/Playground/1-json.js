@@ -22,6 +22,8 @@ databuffer = fs.readFileSync('1-json')
 // Here while fetching the data form the file it will done in the form of buffer or bits
 // so that the reason why you see the digits in the databuffer output
 console.log('databuffer object while reading from file through fs module:',databuffer);
+// in order to convert the databuffer to string we can use the tostring method or jsonparse() method
+console.log('tostring on databuffer :',databuffer.toString());
 
 // so in order to convert the databuffer to the json you need to use the parse() method on the data
 console.log('Json parse used on databuffer : ',JSON.parse(databuffer))
@@ -30,3 +32,7 @@ console.log('Json parse used on databuffer : ',JSON.parse(databuffer))
 console.log('Json parse object :',JSON.parse(databuffer))
 console.log('Json string object :',JSON.stringify(JSON.parse(databuffer)))
 
+data = JSON.parse(databuffer)
+data.title = "I am changing title";
+
+fs.writeFileSync('1-json',JSON.stringify(data))
