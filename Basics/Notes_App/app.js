@@ -11,10 +11,10 @@ using the ES6 but in nodejs we are not using the ES6 so we need to import it usi
 So if Nodejs also uses ES6 then we can import it in the same way the angular does it*/
 
 const validator = require('validator')
-console.log(validator.isEmail("Help@gmail.com"))
-console.log(validator.isURL("Help"))
+//console.log(validator.isEmail("Help@gmail.com"))
+//console.log(validator.isURL("Help"))
 
-console.log(firstname)
+//console.log(firstname)
 
 /* In order to install the npm packages we can go for the npmjs websites where we can have several 
 packages and we can install and use them in our node application
@@ -26,4 +26,32 @@ version so in future it install same version from same url.*/
 
 
 /* Input parameters for Node application. */
-console.log(process.argv)
+//console.log(process.argv)
+
+/* We are trying to use the Yargs to process the command line inputs without using 
+the Process.argv for a better translation of the commands given through command line */
+
+const yargs = require('yargs')
+//yargs.version('7.2.9')
+//console.log(yargs.version)
+
+// For seeing the output of the command line inputs for app.js through yargs
+
+//Customer app version using argv
+yargs.command({
+    command:'Add',
+    describe:"Adding a new Note!",
+    builder:{
+        title:{
+        describe:"Title of the Note",
+        demandOption:true,
+        type:'string'}
+    },
+    handler:function(argv){
+        console.log("Adding Note!",argv.title)}
+    
+})
+
+yargs.parse()
+
+
