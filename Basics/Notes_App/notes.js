@@ -4,7 +4,10 @@ const chalk = require('chalk')
 const addNote = function (title,body){
 
     const notes = loadNotes()
-    var duplicatenotes = notes.filter(function(note){
+    var duplicatenotes = notes.find(function(note){
+        // here we can use the filter as well but the filter runs for all the 
+        // values present in the list and is time consuming so we  can find which stops when found
+      //  var duplicatenotes = notes.filter(function(note){
         return note.title == title;
     })
 
