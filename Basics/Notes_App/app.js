@@ -25,6 +25,21 @@ yargs.command({
 })
 
 yargs.command({
+    command:'remove',
+    Describe:'removes a note when title has been given',
+    builder:{
+        title:{
+            Describe:'Require a title to delete the note',
+            demandOption:true,
+            type:'string'
+        }
+    },
+    handler:function(yargs){
+        notes.removeNote(yargs.title)
+    }
+})
+
+yargs.command({
     command:'LoadAllNotes',
     Describe:'Shows all existing notes',
     type:'string',
