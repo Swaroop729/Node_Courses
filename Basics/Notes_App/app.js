@@ -1,6 +1,8 @@
 const fs = require('fs')
 const notes = require('./Notes')
 const yargs = require('yargs')
+
+debugger
 yargs.command({
     command :'Add',
     describe:'Adding a new Note',

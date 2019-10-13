@@ -11,7 +11,7 @@ const addNote = function (title,body){
         return note.title == title;
     })
 
-    if(duplicatenotes.length!=0){
+    if(duplicatenotes!=null||duplicatenotes!=undefined){
         console.log("The Title has already been taken")
     }
     else{
